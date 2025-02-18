@@ -1,2 +1,22 @@
-<h2>hello app</h2>
+<!-- app.component.html -->
+<div class="container">
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <h2>Dashboard</h2>
+    <ul>
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/analytics">Analytics</a></li>
+      <li><a routerLink="/settings">Settings</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Crypto World by Arafet</h1>
+    <input type="text" placeholder="Search coin (e.g., Bitcoin, Ethereum)">
+    <button>Definition</button>
+    <button>Objectives</button>
+    <router-outlet></router-outlet>
+  </div>
+</div>
 <router-outlet></router-outlet>
