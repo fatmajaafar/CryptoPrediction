@@ -1,7 +1,7 @@
 <div class="sidebar" [ngClass]="{ 'sidebar-collapsed': isCollapsed }">
-    <div class="sidebar-header">
-            <i class="fas fa-bars" (click)="toggleSidebar()"></i> <!-- toggleSidebar -->
-        <h3 *ngIf="!isCollapsed">Menu</h3>
+    <div class="sidebar-header" (click)="toggleSidebar()">
+            <i class="fas fa-bars"></i> &nbsp; <!-- toggleSidebar -->
+            <span *ngIf="!isCollapsed">Menu</span>
     </div>
     <ul>
         <li>
@@ -11,10 +11,16 @@
             </a>
         </li>
         <li>
-            <a routerLink="/analytics" routerLinkActive="active">
+            <a routerLink="/analytics" routerLinkActive="active" (click)="toggleSubMenu('analytics')">
                 <i class="fas fa-chart-line"></i>&nbsp; <!-- Analytics -->
                 <span *ngIf="!isCollapsed">Analytics</span>
             </a>
+            <ul *ngIf="!isCollapsed && isSubMenuOpen('analytics')">
+                <li><a>Fundamental Analysis</a></li>
+                <li><a>Technical Analysis</a></li>
+                <li><a>Sentiment Analysis</a></li>
+                <li><a>Prediction</a></li>
+            </ul>
         </li>
         <li>
             <a routerLink="/settings" routerLinkActive="active">
