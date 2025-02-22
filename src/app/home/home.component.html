@@ -1,9 +1,24 @@
 <div class="home">
-    <h1>Crypto World by Arafet</h1>
-    <p>Search icon (e.g., Bitcoin, Ethereum)</p>
-    <input type="text" placeholder="Search crypto..." />
+    <h1 class="gold-text">Crypto World by Arafet</h1>
     <div>
-        <h2>Definition</h2>
-        <p>objectives</p>
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Search by Coin name"
+            [(ngModel)]="searchQuery"
+            (keyup.enter)="searchCoin()"
+        />
+    </div>
+
+    <div *ngIf="currentCoin">
+        <h4>Definition</h4>
+        <p>{{ currentCoin.definition }}</p>
+
+        <h4>Objectives</h4>
+        <p>{{ currentCoin.objectives }}</p>
+    </div>
+
+    <div *ngIf="!currentCoin && searchQuery">
+        <p>No results found for "{{ searchQuery }}".</p>
     </div>
 </div>

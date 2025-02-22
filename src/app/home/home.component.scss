@@ -1,13 +1,34 @@
 .home {
-    h1 {
-        color: #333;
+    text-align: center;
+
+    .gold-text {
+        color: #ffd700;
+        font-size: 33px;
+        font-weight: bold !important;
     }
+
     p {
         color: #666;
+    }
+    h4 {
+      color: white;  
     }
     input {
         padding: 10px;
         width: 300px;
-        margin-top: 20px;
+        margin: 20px auto 0;
+        display: block;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    p {
+        color: #666;
     }
 }
