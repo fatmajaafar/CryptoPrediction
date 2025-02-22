@@ -3,6 +3,11 @@
             <i class="fas fa-bars"></i> &nbsp; <!-- toggleSidebar -->
             <span *ngIf="!isCollapsed">Menu</span>
     </div>
+    <hr>
+    <i class="fa-solid fa-chart-line"></i> &nbsp;
+    <span *ngIf="!isCollapsed" class="gold-text">Dashboard </span>
+    <hr>
+    
     <ul>
         <li>
             <a routerLink="/home" routerLinkActive="active">
@@ -13,7 +18,8 @@
         <li>
             <a routerLink="/analytics" routerLinkActive="active" (click)="toggleSubMenu('analytics')">
                 <i class="fas fa-chart-line"></i>&nbsp; <!-- Analytics -->
-                <span *ngIf="!isCollapsed">Analytics</span>
+                <span *ngIf="!isCollapsed">Analytics</span> &nbsp;&nbsp;&nbsp;
+                <i class="fas fa-chevron-right" *ngIf="!isCollapsed" [ngClass]="{ 'rotate': isSubMenuOpen('analytics') }"></i>
             </a>
             <ul *ngIf="!isCollapsed && isSubMenuOpen('analytics')">
                 <li><a>Fundamental Analysis</a></li>

@@ -9,7 +9,11 @@
     &.sidebar-collapsed {
         width: 60px;
     }
-
+    .gold-text {
+        color: #ffd700;
+        font-size: 17px;
+        font-weight: bold !important;
+    }
     .sidebar-header {
         padding: 15px;
         display: flex;
@@ -32,8 +36,7 @@
 
     ul {
         list-style-type: none;
-        padding: 0;
-        margin: 0;
+        font-size: 14px;
 
         li {
             a {
@@ -56,11 +59,46 @@
                 span {
                     white-space: nowrap;
                 }
+                .fa-chevron-right {
+                    transition: transform 0.3s ease;
+                    margin-right: 10px;
+                }
+
+                .fa-chevron-right.rotate {
+                    transform: rotate(90deg);
+                }
             }
 
+            ul {
+                margin-left: 20px; /* Indentation pour les sous-menus */
+                position: relative;
+
+            }
             &.active {
                 background-color: #34495e;
             }
         }
     }
+    .fa-chevron-right {
+        transition: transform 0.3s ease; /* Animation de rotation */
+        margin-right: 10px; /* Espacement entre l'icône et le texte */
+    }
+    
+    .fa-chevron-right.rotate {
+        transform: rotate(90deg); /* Rotation de 90 degrés pour la flèche */
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+    }
+
+}
+.sidebar ul li a {
+    padding: 5px 8px; 
+}
+
+.sidebar ul li ul {
+    margin-top: 2px; 
+    margin-bottom: 2px;
 }
