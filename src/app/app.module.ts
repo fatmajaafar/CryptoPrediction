@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
