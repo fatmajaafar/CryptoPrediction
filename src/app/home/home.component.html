@@ -9,7 +9,7 @@
             (keyup.enter)="searchCoin()"
         />
     </div>
-
+<br>
     <div *ngIf="currentCoin">
         <h4>Definition</h4>
         <p>{{ currentCoin.definition }}</p>
@@ -17,7 +17,7 @@
         <h4>Objectives</h4>
         <p>{{ currentCoin.objectives }}</p>
         <br>
-        <div id="aqi-line-chart" style="width: 100%; height: 500px;"></div>
+        <div id="aqi-line-chart" style="width: 100%; height: 350px;"></div>
     </div>
 
     <div *ngIf="!currentCoin && searchQuery">
