@@ -10,27 +10,24 @@ import * as echarts from 'echarts';
 export class HomeComponent implements AfterViewInit, AfterViewChecked {
   searchQuery: string = '';
   currentCoin: { definition: string, objectives: string, chartData?: any } | null = null;
-  chart: any; // ECharts instance
+  chart: any; // local
 
   constructor(private coinService: CoinService, private cdr: ChangeDetectorRef) { }
 
   ngAfterViewInit() {
-    // Initialize the chart instance, but defer rendering until after view update
-    this.chart = echarts.init(document.getElementById('aqi-line-chart') as HTMLElement);
+    // this.chart = echarts.init(document.getElementById('aqi-line-chart') as HTMLElement);
     if (this.currentCoin && this.currentCoin.chartData && this.chart) {
       this.loadChart(this.currentCoin.chartData);
     }
   }
 
   ngAfterViewChecked() {
-    // Ensure the chart is only initialized once
     if (this.currentCoin && this.currentCoin.chartData && this.chart) {
       this.loadChart(this.currentCoin.chartData);
     }
   }
 
   searchCoin() {
-    // Properly dispose of the existing chart instance and reinitialize it
     if (this.chart) {
       this.chart.dispose();  // Dispose of the current chart
       this.chart = echarts.init(document.getElementById('aqi-line-chart') as HTMLElement); // Reinitialize the chart
@@ -42,10 +39,8 @@ export class HomeComponent implements AfterViewInit, AfterViewChecked {
         console.clear();
         console.log(this.currentCoin);
 
-        // Manually trigger change detection after setting currentCoin
         this.cdr.detectChanges();
 
-        // Check if currentCoin and chartData are available before updating the chart
         if (this.currentCoin && this.currentCoin.chartData) {
           this.loadChart(this.currentCoin.chartData);
         }
@@ -66,7 +61,7 @@ export class HomeComponent implements AfterViewInit, AfterViewChecked {
 
     const options = {
       title: {
-        text: `Price History for ${this.searchQuery}`,
+        text: `Price History for "${this.searchQuery}"`,
       },
       tooltip: {
         trigger: 'axis',
@@ -88,7 +83,7 @@ export class HomeComponent implements AfterViewInit, AfterViewChecked {
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: chartData.dates,  // Dates for x-axis
+        data: chartData.dates, 
       },
       yAxis: {
         type: 'value',
@@ -98,7 +93,7 @@ export class HomeComponent implements AfterViewInit, AfterViewChecked {
           name: this.searchQuery,
           type: 'line',
           stack: 'Total',
-          data: chartData.prices,  // Prices for y-axis
+          data: chartData.prices, 
         },
       ],
     };
