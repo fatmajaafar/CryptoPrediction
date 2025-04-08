@@ -34,16 +34,6 @@
                 <span *ngIf="!isCollapsed">Settings</span>
             </a>
         </li>
-        <li>
-            <a (click)="toggleSubMenu('customers')">
-                <i class="fas fa-users"></i>&nbsp; <!-- Customers -->
-                <span *ngIf="!isCollapsed">Customers</span>
-            </a>
-            <ul *ngIf="!isCollapsed && isSubMenuOpen('customers')">
-                <li><a routerLink="/customers/list">List</a></li>
-                <li><a routerLink="/customers/add">Add</a></li>
-            </ul>
-        </li>
         <!-- Add more menu items as needed -->
     </ul>
 </div>
