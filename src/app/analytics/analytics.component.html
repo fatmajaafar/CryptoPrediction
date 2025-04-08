@@ -1,19 +1,19 @@
-<div class="analytics">
-    <h2>Analytics</h2>
+<div class="analytics-section" id="fundamental">
+  <h2>Fundamental Analysis</h2>
+  <div *ngIf="activeSection === 'fundamental'" id="chart-fundamental" style="width: 70%; height: 150px;"></div>
 </div>
-<div>
-    <span class="gold-text">Fundamental Analysis </span>
-    <p>Overview of market trends, news and fundamental factors affecting cryptocurrencies.</p>
+
+<div class="analytics-section" id="technical">
+  <h2>Technical Analysis</h2>
+  <div *ngIf="activeSection === 'technical'" id="chart-technical" style="width: 70%; height: 150px;"></div>
 </div>
-<div>
-    <span class="gold-text">Technical Analysis</span>
-    <p>tessst</p>
+
+<div class="analytics-section" id="sentiment">
+  <h2>Sentiment Analysis</h2>
+  <div *ngIf="activeSection === 'sentiment'" id="chart-sentiment" style="width: 70%; height: 150px;"></div>
 </div>
-<div>
-    <span class="gold-text">Sentiment Analysis</span>
-    <p>tessst</p>
-</div>
-<div>
-    <span class="gold-text">Prediction</span>
-    <p>tessst</p>
+
+<div class="analytics-section" id="prediction">
+  <h2>Prediction</h2>
+  <div *ngIf="activeSection === 'prediction'" id="chart-prediction" style="width: 70%; height: 150px;"></div>
 </div>

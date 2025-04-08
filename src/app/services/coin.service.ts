@@ -34,13 +34,13 @@ export class CoinService {
     },
   };
 
-  constructor(private http: HttpClient) {} // Inject HttpClient for API calls
+  constructor(private http: HttpClient) {}
 
   // Method to get coin data (static for now)
   getCoinData(coinName: string): Observable<{ definition: string, objectives: string } | null> {
     const coinKey = coinName.toLowerCase();
     const data = this.coinData[coinKey] || null;
-    return of(data); // Return an Observable (mock API call)
+    return of(data);
   }
 
   // TODO: Replace with actual API call later (backend!!!!)
